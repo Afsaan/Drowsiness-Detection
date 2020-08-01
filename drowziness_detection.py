@@ -7,7 +7,13 @@ import cv2
 
 
 def eye_aspect_ratio(eye):
+	"""
+	function to calculate the eye aspect ratio
+		Parameters : 
+		    eye : embedding for the eye
 
+		return (int)  : eye aspect ration
+	"""
 	A = distance.euclidean(eye[1], eye[5])
 	B = distance.euclidean(eye[2], eye[4])
 	C = distance.euclidean(eye[0], eye[3])
@@ -62,7 +68,7 @@ while True:
 			flag = 0
 			cv2.putText(frame, "eye is open", (10, 30),
 					cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-					
+
 	cv2.imshow("Frame", frame)
 	key = cv2.waitKey(1) & 0xFF
 	if key == ord("q"):
